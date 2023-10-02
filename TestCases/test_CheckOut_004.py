@@ -62,6 +62,7 @@ class TestCheckOutProcess():
         total_price_element = self.driver.find_element(By.XPATH, "//div[@class='summary_subtotal_label']")
         total_price = (float(total_price_element.text.replace("Item total: $", "")))
         if total_price == total:
+
             # If total prices match, complete the order
             self.ac.Finishbutton_click()
             actual_text = self.driver.find_element(By.XPATH,
@@ -69,9 +70,8 @@ class TestCheckOutProcess():
             displayed_text = "Thank you for your order!"
             assert actual_text == displayed_text, "*********** TEST FAILED ************"
             self.logger.info("******** TEST WAS SUCCESSFUL *********")
-            self.driver.quit()
             self.ac.LogoutSequence()
-
+            self.driver.quit()
 
     def test_checkoutpayment_02(self, setup):
         # This payment method encompasses the selection and ordering of NO items,
