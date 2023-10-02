@@ -111,8 +111,7 @@ class TestCheckOutProcess():
         # Verify if the order was not placed successfully
         body_text = self.driver.find_element(By.TAG_NAME, "body").text
         displayed_text = "Thank you for your order!"  # Displayed message when an order has been placed
-
-        assert displayed_text not in body_text, "******* TEST FAILED: ORDER WAS PLACED WITH NO ITEM ORDERED *******"
         self.driver.quit()
+        assert displayed_text not in body_text, "******* TEST FAILED: ORDER WAS PLACED WITH NO ITEM ORDERED *******"
         self.logger.info("******* TEST SUCCESSFUL: THE ORDER WAS NOT PLACED ********")
 
