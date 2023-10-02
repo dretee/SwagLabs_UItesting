@@ -65,13 +65,15 @@ class TestCheckOutProcess():
 
             # If total prices match, complete the order
             self.ac.Finishbutton_click()
+            self.ac.LogoutSequence()
             actual_text = self.driver.find_element(By.XPATH,
                                                    "//h2[normalize-space()='Thank you for your order!']").text
+
             displayed_text = "Thank you for your order!"
+            self.driver.quit()
             assert actual_text == displayed_text, "*********** TEST FAILED ************"
             self.logger.info("******** TEST WAS SUCCESSFUL *********")
-            self.ac.LogoutSequence()
-            self.driver.quit()
+
 
     def test_checkoutpayment_02(self, setup):
         # This payment method encompasses the selection and ordering of NO items,
@@ -111,5 +113,6 @@ class TestCheckOutProcess():
         displayed_text = "Thank you for your order!"  # Displayed message when an order has been placed
 
         assert displayed_text not in body_text, "******* TEST FAILED: ORDER WAS PLACED WITH NO ITEM ORDERED *******"
-        self.logger.info("******* TEST SUCCESSFUL: THE ORDER WAS NOT PLACED ********")
         self.driver.quit()
+        self.logger.info("******* TEST SUCCESSFUL: THE ORDER WAS NOT PLACED ********")
+
