@@ -4,6 +4,7 @@ from PageObjects.loginObjects import loginObjects
 from Utilities.ReadProperties import Readcongftest
 from Utilities.customerlogger import logen
 
+
 class Test_linkVerification:
     # Initialize class variables
     url = Readcongftest.Getapplicationurl()

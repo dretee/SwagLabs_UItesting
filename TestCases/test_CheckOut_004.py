@@ -45,8 +45,8 @@ class TestCheckOutProcess():
         self.logger.info("******* NAVIGATING TO CART AND CALCULATING TOTAL PRICES ***********")
         self.ac.Cart_click()
         total = 0
-        cart_itemprices = self.driver.find_elements(By.XPATH, "//div[@class='inventory_item_price']")
-        for price in cart_itemprices:
+        cart_item_prices = self.driver.find_elements(By.XPATH, "//div[@class='inventory_item_price']")
+        for price in cart_item_prices:
             prices = (float(price.text.replace("$", "")))
             total += prices
         print(f"the total price of all the goods is {total}")
@@ -71,7 +71,7 @@ class TestCheckOutProcess():
 
             displayed_text = "Thank you for your order!"
             self.driver.quit()
-            assert actual_text == displayed_text, "*********** TEST FAILED ************"
+            assert actual_text.__eq__(displayed_text), "*********** TEST FAILED ************"
             self.logger.info("******** TEST WAS SUCCESSFUL *********")
 
 
@@ -112,6 +112,6 @@ class TestCheckOutProcess():
         body_text = self.driver.find_element(By.TAG_NAME, "body").text
         displayed_text = "Thank you for your order!"  # Displayed message when an order has been placed
         self.driver.quit()
-        assert displayed_text not in body_text, "******* TEST FAILED: ORDER WAS PLACED WITH NO ITEM ORDERED *******"
+        assert displayed_text not in  body_text, "******* TEST FAILED: ORDER WAS PLACED WITH NO ITEM ORDERED *******"
         self.logger.info("******* TEST SUCCESSFUL: THE ORDER WAS NOT PLACED ********")
 
