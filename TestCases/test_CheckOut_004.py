@@ -20,7 +20,7 @@ class TestCheckOutProcess():
         # followed by providing accurate payment information during the checkout process.
 
         # Initialize driver and navigate to the application URL
-        self.logger.info("******* TEST TO ADD ITEMS TO THE CART (test_checkout) ***********")
+        self.logger.info("******* TEST TO CHECKOUT (test_checkout) ***********")
         self.logger.info("******* INITIALIZING THE DRIVER AND OPENING THE WEBPAGE***********")
         self.driver = setup
         self.driver.get(self.url)
