@@ -1,5 +1,3 @@
-import pytest
-from selenium import webdriver
 from Utilities import ReadXyFile
 from Utilities.customerlogger import logen
 from selenium.webdriver.common.by import By

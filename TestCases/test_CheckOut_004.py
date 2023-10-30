@@ -1,6 +1,3 @@
-import time
-import pytest
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from PageObjects.loginObjects import loginObjects
 from PageObjects.AddtocartObjects import AddcartObject

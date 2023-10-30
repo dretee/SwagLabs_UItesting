@@ -4,9 +4,7 @@ from Utilities.ReadProperties import Readcongftest
 from PageObjects.loginObjects import loginObjects
 from Utilities.customerlogger import logen
 from PageObjects.AddtocartObjects import AddcartObject
-import pytest
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+
 
 
 class TestAddRemoveToCart:
